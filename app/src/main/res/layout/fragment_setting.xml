@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SettingFragment"
+    android:background="@color/background">
+
+ <ScrollView
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     app:layout_constraintTop_toTopOf="parent"
+     app:layout_constraintBottom_toBottomOf="parent"
+     android:layout_marginBottom="85dp">
+
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="16dp">
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Settings"
+       android:textSize="28sp"
+       android:textStyle="bold"
+       android:textColor="#111111"
+       android:layout_gravity="center"
+       android:layout_marginTop="24dp"
+       android:layout_marginBottom="24dp"/>
+
+   <!-- CARD 1 -->
+
+   <com.google.android.material.card.MaterialCardView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:cardCornerRadius="16dp"
+       app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/splash_end_light_3"
+        android:orientation="vertical">
+
+     <!-- Profile -->
+
+     <include layout="@layout/item_setting_profile"/>
+
+     <View
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:background="#EEEEEE"/>
+
+     <!-- Dark Mode -->
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="72dp"
+         android:orientation="horizontal"
+         android:gravity="center_vertical"
+         android:paddingHorizontal="16dp">
+
+      <ImageView
+          android:layout_width="24dp"
+          android:layout_height="24dp"
+          android:src="@drawable/ic_moon"/>
+
+      <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Dark Mode"
+          android:textSize="16sp"
+          android:layout_marginStart="16dp"/>
+
+      <com.google.android.material.materialswitch.MaterialSwitch
+          android:id="@+id/switchDarkMode"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
+     </LinearLayout>
+
+     <View
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:background="#EEEEEE"/>
+
+     <include layout="@layout/item_notifications"/>
+
+     <View
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:background="#EEEEEE"/>
+
+     <include layout="@layout/item_theme"/>
+
+     <View
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:background="#EEEEEE"/>
+
+     <include layout="@layout/item_privacy"/>
+
+    </LinearLayout>
+
+   </com.google.android.material.card.MaterialCardView>
+
+   <!-- CARD 2 -->
+
+   <com.google.android.material.card.MaterialCardView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="20dp"
+       app:cardCornerRadius="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/splash_end_light_3"
+        android:orientation="vertical">
+
+     <include layout="@layout/item_rate_app"/>
+
+     <View
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:background="#EEEEEE"/>
+
+     <include layout="@layout/item_about_app"/>
+
+    </LinearLayout>
+
+   </com.google.android.material.card.MaterialCardView>
+
+   <!-- LOGOUT -->
+
+   <com.google.android.material.card.MaterialCardView
+       android:id="@+id/btnLogout"
+       android:layout_width="match_parent"
+       android:layout_height="72dp"
+       android:layout_marginTop="20dp"
+       app:cardCornerRadius="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:background="@color/splash_end_light_3"
+        android:paddingHorizontal="16dp">
+
+     <ImageView
+         android:layout_width="24dp"
+         android:layout_height="24dp"
+         android:src="@drawable/ic_logout"/>
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="1"
+         android:layout_marginStart="16dp"
+         android:text="Log Out"
+         android:textColor="#FF3B30"
+         android:textSize="16sp"
+         android:textStyle="bold"/>
+
+     <ImageView
+         android:layout_width="20dp"
+         android:layout_height="20dp"
+         android:src="@drawable/ic_right_arrow"/>
+    </LinearLayout>
+
+   </com.google.android.material.card.MaterialCardView>
+
+  </LinearLayout>
+
+ </ScrollView>
+
+<!-- <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--     android:id="@+id/bottomNavigation"-->
+<!--     android:layout_width="match_parent"-->
+<!--     android:layout_height="wrap_content"-->
+<!--     android:layout_alignParentBottom="true"-->
+<!--     android:background="@color/white"-->
+<!--     app:layout_constraintStart_toStartOf="parent"-->
+<!--     app:layout_constraintEnd_toEndOf="parent"-->
+<!--     app:layout_constraintBottom_toBottomOf="parent"-->
+<!--     app:itemIconTint="@color/nav_item_color"-->
+<!--     app:itemTextColor="@color/nav_item_color"-->
+<!--     app:labelVisibilityMode="labeled"-->
+
+<!--     app:menu="@menu/bottom_nav_menu" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

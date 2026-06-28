@@ -1,0 +1,40 @@
+<resources>
+    <!--    <string name="app_name">Todo</string>-->
+    <string name="Organize_your_tasks_efficiently">Organize your tasks efficiently</string>
+    <string name="TaskFlow">TaskFlow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_name">TaskFlow</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name_task">TaskFlow</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_up_subtitle">Sign up to get started with TaskFlow</string>
+    <string name="full_name">Full Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="or_continue_with">or continue with</string>
+    <string name="google">Google</string>
+    <string name="apple">Apple</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="login">Login</string>
+    <string name="password_rule_length">Password must be at least 8 characters</string>
+    <string name="password_rule_number">Include at least one number</string>
+    <string name="password_rule_special">Include at least one special character</string>
+    <string name="back">Back</string>
+    <string name="add_photo">Add photo</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="NoAccount">"Don't have an account? "</string>
+    <string name="Apple">Apple</string>
+    <string name="Google">Google</string>
+    <string name="OrContinueWith">or continue with</string>
+    <string name="Login">Login</string>
+    <string name="ForgotPassword">Forgot Password ?</string>
+    <string name="Password">Password</string>
+    <string name="EmailAddress">Email Address</string>
+    <string name="Logintocontinuetoyouraccount">Login to continue to your account</string>
+    <string name="WelcomeBack">Welcome Back! 👋</string>
+    <string name="OrganizeYourTasksSimplifyYourLife">Organize your tasks, simplify your life.</string>
+    <string name="Logout">LogOut</string>
+    <string name="Versiondeveloperampappinfo"><![CDATA[Version, developer &amp; app info]]></string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/bg_gradient.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base lavender background -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#EEF0FB" />
+        </shape>
+    </item>
+
+    <!-- Top-left blob -->
+    <item
+        android:top="-80dp"
+        android:left="-80dp"
+        android:right="200dp"
+        android:bottom="600dp">
+        <shape android:shape="oval">
+            <solid android:color="#D8DCFA" />
+        </shape>
+    </item>
+
+    <!-- Bottom-right blob -->
+    <item
+        android:top="600dp"
+        android:left="180dp"
+        android:right="-60dp"
+        android:bottom="-60dp">
+        <shape android:shape="oval">
+            <solid android:color="#DCE0F8" />
+        </shape>
+    </item>
+
+</layer-list>

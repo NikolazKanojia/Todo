@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/statusFragment"
+        android:icon="@drawable/ic_stats"
+        android:title="stats" />
+
+    <item
+        android:id="@+id/addTaskFragment"
+        android:icon="@drawable/ic_add"
+        android:title="Add Task" />
+
+    <item
+        android:id="@+id/settingFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings" />
+
+</menu>

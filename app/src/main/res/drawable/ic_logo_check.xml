@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- White checkmark with document icon for TaskFlow logo -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="44dp"
+    android:height="44dp"
+    android:viewportWidth="44"
+    android:viewportHeight="44">
+
+    <!-- Document body -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M10,6 Q10,4 12,4 L28,4 L36,12 L36,38 Q36,40 34,40 L12,40 Q10,40 10,38 Z" />
+
+    <!-- Folded corner -->
+    <path
+        android:fillColor="#CCCCFF"
+        android:alpha="0.4"
+        android:pathData="M28,4 L36,12 L28,12 Z" />
+
+    <!-- Checkmark -->
+    <path
+        android:strokeColor="#667eea"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M15,22 L20,27 L29,17" />
+</vector>

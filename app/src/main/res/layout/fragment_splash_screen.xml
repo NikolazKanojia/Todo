@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/bg_splash_gradient"
+tools:context=".SplashScreenFragment">
+
+<androidx.appcompat.widget.AppCompatImageView
+    android:id="@+id/logo"
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    android:src="@drawable/taskflow_logo"
+    app:layout_constraintBottom_toTopOf="@id/TaskFlow_TV"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_chainStyle="packed" />
+
+<androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/TaskFlow_TV"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:text="@string/TaskFlow"
+    android:textColor="@color/white"
+    android:textSize="24sp"
+    app:layout_constraintBottom_toTopOf="@id/organize_your_tasks_TV"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/logo" />
+
+<androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/organize_your_tasks_TV"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:fontFamily="sans-serif-medium"
+    android:text="@string/Organize_your_tasks_efficiently"
+    android:textColor="@color/white"
+    android:textSize="16sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/TaskFlow_TV" />
+</androidx.constraintlayout.widget.ConstraintLayout>

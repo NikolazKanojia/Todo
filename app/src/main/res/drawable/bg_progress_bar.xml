@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/bg_progress_bar.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background track -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp" />
+            <solid android:color="#E8E9F5" />
+        </shape>
+    </item>
+
+    <!-- Filled progress -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <corners android:radius="8dp" />
+                <gradient
+                    android:type="linear"
+                    android:angle="0"
+                    android:startColor="#667eea"
+                    android:endColor="#764ba2" />
+            </shape>
+        </clip>
+    </item>
+
+</layer-list>

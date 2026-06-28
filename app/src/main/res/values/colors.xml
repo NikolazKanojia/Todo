@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="splash_start">#5A54F9</color>
+    <color name="splash_end">#A27BF7</color>
+    <color name="background">#F0EFFF</color>
+    <color name="primary_purple">#6C5CE7</color>
+    <color name="primary_purple_dark">#5A4BD1</color>
+    <color name="primary_purple_light">#A29BFE</color>
+    <color name="hint_color">#B0AECF</color>
+    <color name="icon_color">#9B98C8</color>
+    <color name="text_primary">#1A1A2E</color>
+    <color name="text_secondary">#6B6B8D</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="divider_color">#E0DFEF</color>
+    <color name="checkbox_checked">#6C5CE7</color>
+    <color name="social_button_bg">#FFFFFF</color>
+    <color name="social_button_border">#E8E7F7</color>
+    <color name="login_link_color">#6C5CE7</color>
+    <color name="error_color">#FF6B6B</color>
+    <color name="success_color">#6C5CE7</color>
+    <color name="gray_100">#9E9E9E</color>
+    <color name="splash_end_light_1">#B596F9</color>
+    <color name="splash_end_light_2">#C8B0FB</color>
+    <color name="splash_end_light_3">#DBC9FC</color>
+    <color name="splash_end_light_4">#EEE3FE</color>
+</resources>
