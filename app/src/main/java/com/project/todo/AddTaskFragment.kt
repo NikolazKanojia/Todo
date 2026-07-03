@@ -13,10 +13,12 @@ import com.project.todo.databinding.FragmentAddTaskBinding
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
+import androidx.lifecycle.ViewModelProvider
 
 
 class AddTaskFragment : Fragment() {
     private lateinit var binding: FragmentAddTaskBinding
+    private lateinit var viewModel: TaskViewModel
 
     private val calendar = Calendar.getInstance()
 
@@ -30,6 +32,10 @@ class AddTaskFragment : Fragment() {
 
         clickListeners()
 
+        viewModel = ViewModelProvider(
+            this,
+            TaskViewModelFactory(requireActivity().application)
+        )[TaskViewModel::class.java]
         return binding.root
     }
 
@@ -126,9 +132,27 @@ class AddTaskFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
 
-                // TODO Save in Room Database
+                val task = Task(
 
-                findNavController().popBackStack()
+                    title = title,
+
+                    description = description,
+
+                    dueDate = binding.tvDate.text.toString(),
+
+                    reminder = binding.tvReminder.text.toString()
+
+                )
+
+                viewModel.insert(task)
+
+                Toast.makeText(
+                    requireContext(),
+                    "Task Saved",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                findNavController().navigate(R.id.homeFragment)
             }
         }
     }

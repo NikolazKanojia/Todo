@@ -52,6 +52,7 @@
 
             <!-- Add Badge -->
             <FrameLayout
+                android:id="@+id/flAddPhoto"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:layout_gravity="bottom|end"
@@ -334,120 +335,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!-- Divider with text -->
-            <RelativeLayout
-                android:id="@+id/parentDivider"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:gravity="center_vertical">
 
-                <View
-                    android:id="@+id/dividerLeft"
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="12dp"
-                    android:layout_toStartOf="@+id/tvOrContinue"
-                    android:background="@color/divider_color" />
-
-                <TextView
-                    android:id="@+id/tvOrContinue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="@string/or_continue_with"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="13sp" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="12dp"
-                    android:layout_toEndOf="@+id/tvOrContinue"
-                    android:background="@color/divider_color" />
-            </RelativeLayout>
-
-            <!-- Social Buttons -->
-            <LinearLayout
-                android:id="@+id/parentBtnSocial"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:orientation="horizontal">
-
-                <!-- Google Button -->
-                <FrameLayout
-                    android:id="@+id/btnGoogle"
-                    android:layout_width="0dp"
-                    android:layout_height="52dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_social_button"
-                    android:clickable="true"
-                    android:focusable="true">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:contentDescription="@null"
-                            android:src="@drawable/ic_google" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:text="@string/google"
-                            android:textColor="@color/text_primary"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </FrameLayout>
-
-                <!-- Apple Button -->
-                <FrameLayout
-                    android:id="@+id/btnApple"
-                    android:layout_width="0dp"
-                    android:layout_height="52dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_social_button"
-                    android:clickable="true"
-                    android:focusable="true">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:contentDescription="@null"
-                            android:src="@drawable/ic_apple" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:text="@string/apple"
-                            android:textColor="@color/text_primary"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </FrameLayout>
-            </LinearLayout>
 
             <!-- Already have account -->
             <LinearLayout

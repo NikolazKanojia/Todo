@@ -8,10 +8,11 @@ import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class TaskAdapter(
-    private val tasks: MutableList<TaskItem>,
+    private var tasks: MutableList<Task>,
     private val onCheckToggle: (Int) -> Unit,
     private val onStarToggle: (Int) -> Unit
 ) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
@@ -37,9 +38,22 @@ class TaskAdapter(
         return TaskViewHolder(view)
     }
 
+    fun submitList(newList: List<Task>) {
+
+        tasks.clear()
+        tasks.addAll(newList)
+
+        notifyDataSetChanged()
+    }
+
+    fun getTask(position: Int): Task {
+
+        return tasks[position]
+    }
+
     override fun getItemCount(): Int {
         Log.d("ITEM_COUNT", tasks.size.toString())
-        return   tasks.size
+        return tasks.size
     }
 
     override fun onBindViewHolder(
@@ -50,10 +64,10 @@ class TaskAdapter(
         val task = tasks[position]
         Log.d("ITEM_BIND", "Position = $position")
         holder.tvTitle.text = task.title
-        holder.tvSub.text = task.subtitle
+        holder.tvSub.text = task.description
 
         // Remove previous listener (important for RecyclerView)
-     holder.cbTask.setOnCheckedChangeListener(null)
+        holder.cbTask.setOnCheckedChangeListener(null)
 
         // Checkbox state
         holder.cbTask.isChecked = task.isCompleted
@@ -95,20 +109,25 @@ class TaskAdapter(
                 tasks[pos].isCompleted = holder.cbTask.isChecked
 
                 holder.cbTask.background =
-                    if (holder.cbTask.isChecked)
-                        holder.itemView.context.getDrawable(
+                    if (tasks[pos].isCompleted)
+                        ContextCompat.getDrawable(
+                            holder.itemView.context,
                             R.drawable.bg_checkbox_checked
                         )
                     else
-                        holder.itemView.context.getDrawable(
+                        ContextCompat.getDrawable(
+                            holder.itemView.context,
                             R.drawable.bg_checkbox_unchecked
                         )
 
-//                notifyItemChanged(pos)
+                holder.tvTitle.setTextColor(
+                    if (tasks[pos].isCompleted)
+                        Color.parseColor("#AAAACC")
+                    else
+                        Color.parseColor("#1A1A2E")
+                )
 
                 onCheckToggle(pos)
-                Log.d("CHECKED", "Position=$pos checked=${tasks[pos].isCompleted} size=${tasks.size}")
-
             }
         }
 
@@ -129,8 +148,6 @@ class TaskAdapter(
                 )
 
                 onStarToggle(pos)
-
-                Log.d("STAR", "Position=$pos Star=${tasks[pos].isStarred}")
             }
         }
 

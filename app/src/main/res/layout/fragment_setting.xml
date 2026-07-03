@@ -49,61 +49,36 @@
 
      <!-- Profile -->
 
-     <include layout="@layout/item_setting_profile"/>
+     <include
+         android:id="@+id/layoutProfile"
+         layout="@layout/item_setting_profile"/>
 
      <View
          android:layout_width="match_parent"
          android:layout_height="1dp"
          android:background="#EEEEEE"/>
 
-     <!-- Dark Mode -->
-
-     <LinearLayout
-         android:layout_width="match_parent"
-         android:layout_height="72dp"
-         android:orientation="horizontal"
-         android:gravity="center_vertical"
-         android:paddingHorizontal="16dp">
-
-      <ImageView
-          android:layout_width="24dp"
-          android:layout_height="24dp"
-          android:src="@drawable/ic_moon"/>
-
-      <TextView
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:text="Dark Mode"
-          android:textSize="16sp"
-          android:layout_marginStart="16dp"/>
-
-      <com.google.android.material.materialswitch.MaterialSwitch
-          android:id="@+id/switchDarkMode"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"/>
-     </LinearLayout>
+     <include
+         android:id="@+id/layoutNotifications"
+         layout="@layout/item_notifications"/>
 
      <View
          android:layout_width="match_parent"
          android:layout_height="1dp"
          android:background="#EEEEEE"/>
 
-     <include layout="@layout/item_notifications"/>
+     <include
+         android:id="@+id/layoutTheme"
+         layout="@layout/item_theme"/>
 
      <View
          android:layout_width="match_parent"
          android:layout_height="1dp"
          android:background="#EEEEEE"/>
 
-     <include layout="@layout/item_theme"/>
-
-     <View
-         android:layout_width="match_parent"
-         android:layout_height="1dp"
-         android:background="#EEEEEE"/>
-
-     <include layout="@layout/item_privacy"/>
+     <include
+         android:id="@+id/layoutPrivacy"
+         layout="@layout/item_privacy"/>
 
     </LinearLayout>
 
@@ -123,14 +98,18 @@
         android:background="@color/splash_end_light_3"
         android:orientation="vertical">
 
-     <include layout="@layout/item_rate_app"/>
+     <include
+         android:id="@+id/layoutRateApp"
+         layout="@layout/item_rate_app"/>
 
      <View
          android:layout_width="match_parent"
          android:layout_height="1dp"
          android:background="#EEEEEE"/>
 
-     <include layout="@layout/item_about_app"/>
+     <include
+         android:id="@+id/aboutApp"
+         layout="@layout/item_about_app"/>
 
     </LinearLayout>
 

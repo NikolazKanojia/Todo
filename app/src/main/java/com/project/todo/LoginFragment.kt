@@ -26,8 +26,6 @@ class LoginFragment : Fragment() {
     private lateinit var btnLogin: Button
     private lateinit var tvForgotPassword: TextView
     private lateinit var tvSignUp: TextView
-    private lateinit var cardGoogle: CardView
-    private lateinit var cardApple: CardView
     private lateinit var tvAppName: TextView
 
     private var isPasswordVisible = false
@@ -56,8 +54,6 @@ class LoginFragment : Fragment() {
         btnLogin          = view.findViewById(R.id.btnLogin)
         tvForgotPassword  = view.findViewById(R.id.tvForgotPassword)
         tvSignUp          = view.findViewById(R.id.tvSignUp)
-        cardGoogle        = view.findViewById(R.id.cardGoogle)
-        cardApple         = view.findViewById(R.id.cardApple)
         tvAppName         = view.findViewById(R.id.tvAppName)
     }
 
@@ -118,17 +114,6 @@ class LoginFragment : Fragment() {
             // findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
         }
 
-        // Google sign-in
-        cardGoogle.setOnClickListener {
-            Toast.makeText(requireContext(), "Continue with Google", Toast.LENGTH_SHORT).show()
-            // Integrate Google Sign-In SDK here
-        }
-
-        // Apple sign-in
-        cardApple.setOnClickListener {
-            Toast.makeText(requireContext(), "Continue with Apple", Toast.LENGTH_SHORT).show()
-            // Integrate Apple Sign-In here
-        }
 
         // Sign Up
         tvSignUp.setOnClickListener {
@@ -235,8 +220,6 @@ class LoginFragment : Fragment() {
             root.findViewById<View>(R.id.cardPassword),
             root.findViewById<View>(R.id.tvForgotPassword),
             root.findViewById<View>(R.id.cardLoginBtn),
-            root.findViewById<View>(R.id.llDivider),
-            root.findViewById<View>(R.id.llSocial),
             root.findViewById<View>(R.id.llSignUp)
         )
 

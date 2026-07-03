@@ -16,7 +16,11 @@ import android.widget.TextView
 import android.widget.Toast
 import android.text.TextWatcher
 import android.text.Editable
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.project.todo.databinding.FragmentSignUpBinding
 
 class SignUpFragment : Fragment() {
@@ -29,8 +33,6 @@ class SignUpFragment : Fragment() {
     private lateinit var btnToggleConfirmPassword: ImageButton
     private lateinit var btnSignUp: View
     private lateinit var btnBack: ImageButton
-    private lateinit var btnGoogle: FrameLayout
-    private lateinit var btnApple: FrameLayout
     private lateinit var tvLogin: TextView
     private lateinit var avatarContainer: FrameLayout
 
@@ -45,12 +47,38 @@ class SignUpFragment : Fragment() {
     lateinit var binding: FragmentSignUpBinding
 
     lateinit var sharedPreferences: SharedPreferences
+    private lateinit var viewModel: TaskViewModel
+    var imageUri : String=""
+    private val pickMedia =
+        registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
+
+            if (uri != null) {
+
+                Glide.with(this)
+                    .load(uri)
+                    .circleCrop()
+                    .into(binding.ivAvatar)
+                imageUri=uri.toString()
+                binding.flAddPhoto.visibility = View.GONE
+
+            } else {
+
+                binding.ivAvatar.setImageResource(R.drawable.ic_person)
+                binding.flAddPhoto.visibility = View.VISIBLE
+
+            }
+
+        }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding= FragmentSignUpBinding.inflate(inflater,container,false)
+        viewModel = ViewModelProvider(
+            this,
+            TaskViewModelFactory(requireActivity().application)
+        )[TaskViewModel::class.java]
         return binding.root
     }
 
@@ -71,8 +99,6 @@ class SignUpFragment : Fragment() {
         btnToggleConfirmPassword = view.findViewById(R.id.btnToggleConfirmPassword)
         btnSignUp                = view.findViewById(R.id.btnSignUp)
         btnBack                  = view.findViewById(R.id.btnBack)
-        btnGoogle                = view.findViewById(R.id.btnGoogle)
-        btnApple                 = view.findViewById(R.id.btnApple)
         tvLogin                  = view.findViewById(R.id.tvLogin)
         avatarContainer          = view.findViewById(R.id.avatarContainer)
         checkLength              = view.findViewById(R.id.checkLength)
@@ -106,15 +132,6 @@ class SignUpFragment : Fragment() {
         binding.ivAvatar.setOnClickListener {
             saveProfilePhoto()
         }
-
-        btnGoogle.setOnClickListener {
-            Toast.makeText(requireContext(), "Continue with Google", Toast.LENGTH_SHORT).show()
-        }
-
-        btnApple.setOnClickListener {
-            Toast.makeText(requireContext(), "Continue with Apple", Toast.LENGTH_SHORT).show()
-        }
-
         tvLogin.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
@@ -125,9 +142,10 @@ class SignUpFragment : Fragment() {
     }
 
     private fun saveProfilePhoto(){
-        // Save the profile photo to SharedPreferences or any other storage
-        // For demonstration, we'll just show a toast message
-        Toast.makeText(requireContext(), "Profile photo saved!", Toast.LENGTH_SHORT).show()
+
+        pickMedia.launch(
+            PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+        )
     }
     private fun setupPasswordValidation() {
         etPassword.addTextChangedListener(object : TextWatcher {
@@ -194,7 +212,7 @@ class SignUpFragment : Fragment() {
             }
             else -> {
 
-                val sharedPreferences = requireContext().getSharedPreferences(
+                 sharedPreferences = requireContext().getSharedPreferences(
                     "UserData",
                     android.content.Context.MODE_PRIVATE
                 )
@@ -205,6 +223,7 @@ class SignUpFragment : Fragment() {
                 editor.putString("EMAIL", email)
                 editor.putString("PASSWORD", password)
                 editor.putBoolean("IS_LOGGED_IN", true)
+                editor.putString("PROFILE_PHOTO_URI", imageUri.toString())
                 editor.apply()
 
                 Toast.makeText(
@@ -212,6 +231,8 @@ class SignUpFragment : Fragment() {
                     "Account created successfully!",
                     Toast.LENGTH_SHORT
                 ).show()
+                // Clear old tasks
+                viewModel.deleteAllTasks()
                 Toast.makeText(requireContext(), "Account created successfully!", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(
                     R.id.homeFragment,
@@ -243,9 +264,6 @@ class SignUpFragment : Fragment() {
             root.findViewById<View>(R.id.ConfirmPasswordContainer),
             root.findViewById<View>(R.id.parentcheckboxes),
             root.findViewById<View>(R.id.btnSignUp),
-            root.findViewById<View>(R.id.parentDivider),
-            root.findViewById<View>(R.id.parentDivider),
-            root.findViewById<View>(R.id.parentBtnSocial),
             root.findViewById<View>(R.id.parentAlreadyHaveAccount)
         )
         views.forEachIndexed { index, view ->
