@@ -39,20 +39,9 @@
         <action
             android:id="@+id/action_homeFragment_to_addTaskFragment"
             app:destination="@id/addTaskFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_statusFragment"
-            app:destination="@id/statusFragment" />
+
         <action
             android:id="@+id/action_homeFragment_to_settingFragment"
-            app:destination="@id/settingFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/statusFragment"
-        android:name="com.project.todo.StatusFragment"
-        android:label="fragment_status"
-        tools:layout="@layout/fragment_status" >
-        <action
-            android:id="@+id/action_statusFragment_to_settingFragment"
             app:destination="@id/settingFragment" />
     </fragment>
     <fragment
@@ -79,5 +68,6 @@
             android:id="@+id/action_settingFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+
 
 </navigation>

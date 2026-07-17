@@ -21,6 +21,7 @@ import androidx.cardview.widget.CardView
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.project.todo.databinding.FragmentHomeBinding
 
 
@@ -180,10 +181,15 @@ class HomeFragment : Fragment() {
                 val task = adapter.getTask(position)
 
                 viewModel.update(task)
+            },
+
+            onTaskLongClick = { task ->
+                showDeleteDialog(task)
             }
 
+
         )
-        rvTasks.setHasFixedSize(true)
+        rvTasks.setHasFixedSize(false)
         rvTasks.layoutManager = LinearLayoutManager(requireContext())
         rvTasks.adapter = adapter
     }
@@ -218,6 +224,20 @@ class HomeFragment : Fragment() {
             v.animate().alpha(1f).translationY(0f)
                 .setDuration(380).setStartDelay((i * 70).toLong()).start()
         }
+    }
+
+    private fun showDeleteDialog(task: Task) {
+
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Delete Task")
+            .setMessage("Do you want to delete this task?")
+            .setPositiveButton("Yes") { _, _ ->
+
+                viewModel.delete(task)
+
+            }
+            .setNegativeButton("No", null)
+            .show()
     }
 
 

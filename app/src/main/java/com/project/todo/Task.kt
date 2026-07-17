@@ -1,7 +1,10 @@
 package com.project.todo
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+
+
 
 @Entity(tableName = "task_table")
 data class Task(

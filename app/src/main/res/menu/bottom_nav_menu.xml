@@ -7,11 +7,6 @@
         android:title="Home" />
 
     <item
-        android:id="@+id/statusFragment"
-        android:icon="@drawable/ic_stats"
-        android:title="stats" />
-
-    <item
         android:id="@+id/addTaskFragment"
         android:icon="@drawable/ic_add"
         android:title="Add Task" />

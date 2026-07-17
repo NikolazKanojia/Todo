@@ -233,6 +233,7 @@ class SignUpFragment : Fragment() {
                 ).show()
                 // Clear old tasks
                 viewModel.deleteAllTasks()
+
                 Toast.makeText(requireContext(), "Account created successfully!", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(
                     R.id.homeFragment,

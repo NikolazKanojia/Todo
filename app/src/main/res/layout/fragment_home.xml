@@ -288,19 +288,7 @@
             android:contentDescription="Add task" />
     </androidx.cardview.widget.CardView>
 
-    <!-- ── Bottom Navigation ───────────────────────────────────────── -->
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/bottomNav"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@color/white"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:itemIconTint="@color/nav_item_color"-->
-<!--        app:itemTextColor="@color/nav_item_color"-->
-<!--        app:labelVisibilityMode="labeled"-->
-<!--        app:menu="@menu/bottom_nav_menu" />-->
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

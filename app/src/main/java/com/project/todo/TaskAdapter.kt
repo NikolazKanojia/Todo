@@ -14,7 +14,9 @@ import androidx.recyclerview.widget.RecyclerView
 class TaskAdapter(
     private var tasks: MutableList<Task>,
     private val onCheckToggle: (Int) -> Unit,
-    private val onStarToggle: (Int) -> Unit
+    private val onStarToggle: (Int) -> Unit,
+    private val onTaskLongClick: (Task) -> Unit
+
 ) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     inner class TaskViewHolder(itemView: android.view.View) :
@@ -150,6 +152,17 @@ class TaskAdapter(
                 onStarToggle(pos)
             }
         }
+        holder.itemView.setOnLongClickListener {
+
+            val pos = holder.bindingAdapterPosition
+
+            if (pos != RecyclerView.NO_POSITION) {
+                onTaskLongClick(tasks[pos])
+            }
+
+            true
+        }
+
 
     }
 }

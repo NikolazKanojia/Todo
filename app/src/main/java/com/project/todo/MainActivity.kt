@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity() {
             when (destination.id) {
 
                 R.id.homeFragment,
-                R.id.statusFragment,
                 R.id.settingFragment -> {
                     binding.bottomNav.visibility = View.VISIBLE
                 }
