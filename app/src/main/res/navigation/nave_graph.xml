@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -68,6 +71,10 @@
             android:id="@+id/action_settingFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.project.todo.ForgetPasswordFragment"
+        android:label="ForgetPasswordFragment" />
 
 
 </navigation>

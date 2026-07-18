@@ -109,9 +109,7 @@ class LoginFragment : Fragment() {
 
         // Forgot password
         tvForgotPassword.setOnClickListener {
-            Toast.makeText(requireContext(), "Forgot Password tapped", Toast.LENGTH_SHORT).show()
-            // Navigate using NavController (if using Navigation Component):
-            // findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_forgetPasswordFragment)
         }
 
 
